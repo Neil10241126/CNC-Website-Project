@@ -1,0 +1,27 @@
+// 圖片取代文字
+@mixin hide-text {
+  text-indent: 101%;
+  white-space: nowrap;
+  overflow: hidden;
+};
+// 垂直(多行)文字截斷 ...
+// 連結 : https://stackoverflow.com/questions/33058004/applying-an-ellipsis-to-multiline-text/41137262#41137262
+@mixin text-vertical-truncate {
+  display: -webkit-box;
+  max-width: 200px;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+};
+// RWD 
+@mixin pad {
+  @media (min-width: 576px) {
+    @content
+  }
+};
+
+@mixin desktop {
+  @media (min-width: 992px) {
+    @content
+  }
+};

@@ -1,0 +1,10 @@
+// bootstrap CSS
+@import 'bootstrap/scss/functions.scss';
+@import './variablesBootstrap.scss';
+@import 'bootstrap/scss/bootstrap.scss';
+// sweetalert2 CSS
+@import 'sweetalert2/dist/sweetalert2.min.css';
+
+@import './variables';
+@import './base.scss';
+@import './mixin.scss';
