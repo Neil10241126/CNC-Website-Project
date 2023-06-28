@@ -11,13 +11,13 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="public/img/index-banner-1.jpg" class="d-block w-100" alt="...">
+          <img src="../../assets/img/index-banner-1.jpg" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-          <img src="public/img/index-banner-2.jpg" class="d-block w-100" alt="...">
+          <img src="../../assets/img/index-banner-2.jpg" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-          <img src="public/img/index-banner-3.jpg" class="d-block w-100" alt="...">
+          <img src="../../assets/img/index-banner-3.jpg" class="d-block w-100" alt="...">
         </div>
       </div>
     </div>
@@ -109,7 +109,7 @@
     <div class="card border-0 mb-3 bg-primary">
       <div class="row g-0">
         <div class="col-md-6" data-aos="fade-right">
-          <img src="public/img/index-brand-1.jpg" class="rounded-start" alt="brand-img-1">
+          <img src="../../assets/img/index-brand-1.jpg" class="rounded-start" alt="brand-img-1">
         </div>
         <div class="col-md-6 d-flex justify-content-center align-items-center"
         data-aos="fade-right" style="padding: 10% 0">
@@ -123,7 +123,7 @@
     <div class="card border-0 mb-3 bg-primary">
       <div class="row g-0 flex-row-reverse">
         <div class="col-md-6" data-aos="fade-right">
-          <img src="public/img/index-brand-2.jpg" class="rounded-end" alt="brand-img-1">
+          <img src="../../assets/img/index-brand-2.jpg" class="rounded-end" alt="brand-img-1">
         </div>
         <div class="col-md-6 d-flex justify-content-center align-items-center"
         data-aos="fade-right" style="padding: 10% 0">
@@ -137,7 +137,7 @@
     <div class="card border-0 mb-3 bg-primary">
       <div class="row g-0">
         <div class="col-md-6" data-aos="fade-right">
-          <img src="public/img/index-brand-3.jpg" class="rounded-start" alt="brand-img-1">
+          <img src="../../assets/img/index-brand-3.jpg" class="rounded-start" alt="brand-img-1">
         </div>
         <div class="col-md-6 d-flex justify-content-center align-items-center"
         data-aos="fade-right" style="padding: 10% 0">
@@ -159,7 +159,7 @@
           <div class="col-lg-12" data-aos="fade-up">
             <RouterLink to="course/category/lathe">
               <div class="card bg-dark text-white overflow-hidden">
-                <img src="public/img/index-skills-1.jpg" class="card-img" alt="...">
+                <img src="../../assets/img/index-skills-1.jpg" class="card-img" alt="...">
                 <div class="position-absolute bottom-0 end-0 bg-secondary text-center p-2">
                   <h5 class="card-title mb-1">CNC 車床</h5>
                   <p class="card-text">3 門課程</p>
@@ -170,7 +170,7 @@
           <div class="col-lg-6" data-aos="fade-up">
             <RouterLink to="course/category/lathe">
               <div class="card bg-dark text-white overflow-hidden">
-                <img src="public/img/index-skills-2.jpg" class="card-img" alt="...">
+                <img src="../../assets/img/index-skills-2.jpg" class="card-img" alt="...">
                 <div class="position-absolute bottom-0 end-0 bg-secondary text-center p-2">
                   <h5 class="card-title mb-1">專業通識</h5>
                   <p class="card-text">5 門課程</p>
@@ -181,7 +181,7 @@
           <div class="col-lg-6" data-aos="fade-up">
             <RouterLink to="course/category/lathe">
               <div class="card bg-dark text-white overflow-hidden">
-                <img src="public/img/index-skills-3.jpg" class="card-img" alt="...">
+                <img src="../../assets/img/index-skills-3.jpg" class="card-img" alt="...">
                 <div class="position-absolute bottom-0 end-0 bg-secondary text-center p-2">
                   <h5 class="card-title mb-1">證照考試</h5>
                   <p class="card-text">5 門課程</p>
@@ -194,7 +194,7 @@
       <div class="col-lg-4 col-md-6" data-aos="fade-up" style="min-height: 350px;">
         <RouterLink to="course/category/lathe">
           <div class="card bg-dark text-white position-relative h-100 overflow-hidden">
-            <img src="../../../public/img/index-skills-4.jpg"
+            <img src="../../assets/img/index-skills-4.jpg"
              class="card-img position-absolute w-100 h-100"
              style="object-fit: cover;" alt="...">
             <div class="position-absolute bottom-0 end-0 bg-secondary text-center p-2">

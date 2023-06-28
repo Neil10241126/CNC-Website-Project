@@ -123,7 +123,7 @@ export default {
 @import '../../node_modules/bootstrap-icons/font/bootstrap-icons.css';
 
 .logo .navbar-brand {
-  background-image: url('../../public/img/logo-精密學堂.png');
+  background-image: url('../assets/img/logo-精密學堂.png');
   display: block;
   width: 224px;
   height: 75px;

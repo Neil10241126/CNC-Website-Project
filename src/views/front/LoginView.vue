@@ -2,7 +2,7 @@
   <div class="container d-flex justify-content-center mt-5">
     <div class="card col-4">
       <div class="card-header text-center py-3 d-flex justify-content-center align-items-center">
-        <img src="public/userLogin.svg" alt="userLogin">
+        <img src="../../assets/userLogin.svg" alt="userLogin">
         <h3 class="fs-3 lh-base m-0 ms-3">請先登入</h3>
       </div>
       <div class="card-body">
@@ -50,8 +50,8 @@ export default {
           document.cookie = `CookieToken=${token}; expires=${new Date(expired)};`;
           // 轉址
           this.$router.push('/admin/products');
-        }).catch((err) => {
-          alert(err.response.data.message);
+        }).catch(() => {
+          // alert(err.response.data.message);
         });
     },
   },

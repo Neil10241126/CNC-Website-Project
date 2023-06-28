@@ -69,8 +69,8 @@ export default {
         .then((res) => {
           this.coupons = res.data.coupons;
           // console.log('優惠券列表: ', this.coupons);
-        }).catch((err) => {
-          console.log(err);
+        }).catch(() => {
+          // console.log(err);
         });
     },
 

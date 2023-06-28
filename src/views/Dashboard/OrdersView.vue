@@ -61,8 +61,8 @@ export default {
       this.$http.post(`${VITE_URL}/v2/api/user/check`)
         .then(() => {
           this.getOrders();
-        }).catch((err) => {
-          alert(err.response.data.message);
+        }).catch(() => {
+          // alert(err.response.data.message);
           this.$router.push('/login');
         });
     },
@@ -70,11 +70,11 @@ export default {
       this.$http.get(`${VITE_URL}/v2/api/${VITE_PATH}/admin/orders`)
         .then((res) => {
           this.orders = res.data.orders;
-          console.log('訂單列表:', this.orders);
+          // console.log('訂單列表:', this.orders);
           this.pages = res.data.pagination;
           // console.log('分頁:', this.pages);
-        }).catch((err) => {
-          console.log(err);
+        }).catch(() => {
+          // console.log(err);
         });
     },
   },

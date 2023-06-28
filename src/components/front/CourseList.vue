@@ -80,9 +80,9 @@ export default {
       this.$http.get(url)
         .then((res) => {
           this.products = res.data.products;
-          console.log('客戶產品列表: ', this.products);
-        }).catch((err) => {
-          console.log(err);
+          // console.log('客戶產品列表: ', this.products);
+        }).catch(() => {
+          // console.log(err);
         });
     },
     sortArray() {

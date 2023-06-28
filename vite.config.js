@@ -11,6 +11,7 @@ export default defineConfig({
       include: ['src/**/*.js', 'src/**/*.vue', 'src/*.js', 'src/*.vue'],
     }),
   ],
+  base: '/CNC-Website-Project/',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),

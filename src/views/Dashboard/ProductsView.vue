@@ -77,8 +77,8 @@ export default {
       this.$http.post(`${VITE_URL}/v2/api/user/check`)
         .then(() => {
           this.getProducts();
-        }).catch((err) => {
-          alert(err.response.data.message);
+        }).catch(() => {
+          // alert(err.response.data.message);
           this.$router.push('/login');
         });
     },

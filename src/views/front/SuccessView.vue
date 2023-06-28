@@ -1,7 +1,7 @@
 <template>
   <section class="banner position-relative"
    style="margin-top: 95px;">
-    <img src="public/img/course-banner.jpg" alt="">
+    <img src="../../assets/img/course-banner.jpg" alt="">
     <div class="position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center
      align-items-center"
       style="background: rgba(24, 29, 56, .8);">

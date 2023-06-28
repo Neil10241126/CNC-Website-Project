@@ -40,8 +40,8 @@ export default {
         .then(() => {
           this.getProducts();
           this.deleteModal.hide();
-        }).catch((err) => {
-          console.log(err);
+        }).catch(() => {
+          // console.log(err);
         });
     },
   },

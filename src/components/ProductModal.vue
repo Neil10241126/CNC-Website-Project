@@ -105,13 +105,13 @@ export default {
         methods = 'put';
       }
       this.$http[methods](url, { data: this.data })
-        .then((res) => {
-          console.log(res.data.message);
+        .then(() => {
+          // console.log(res.data.message);
           this.productModal.hide();
           this.getProducts();
-        }).catch((err) => {
+        }).catch(() => {
           // alert(err.response.data.message);
-          console.log(err.response.data.message);
+          // console.log(err.response.data.message);
         });
     },
   },

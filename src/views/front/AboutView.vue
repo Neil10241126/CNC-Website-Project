@@ -1,7 +1,7 @@
 <template>
   <section class="banner position-relative"
    style="margin-top: 95px;">
-    <img src="public/img/about-banner.webp" alt="">
+    <img src="../../assets/img/about-banner.webp" alt="">
     <div class="position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center
      align-items-center"
       style="background: rgba(24, 29, 56, .4);">
@@ -20,7 +20,7 @@
       <div class="col" data-aos="flip-left">
         <div class="card h-100">
           <div class="card-header p-0 position-relative">
-            <img src="public/img/about-person-1.jpg" class="card-img-top" alt="..."
+            <img src="../../assets/img/about-person-1.jpg" class="card-img-top" alt="..."
             style="height: 250px; object-fit: cover;">
             <div class="position-absolute bottom-0 start-50 translate-middle-x">
              <div class="bg-primary d-flex p-2">
@@ -42,7 +42,7 @@
       <div class="col" data-aos="flip-left">
         <div class="card h-100">
           <div class="card-header p-0 position-relative">
-            <img src="public/img/about-person-2.jpg" class="card-img-top" alt="..."
+            <img src="../../assets/img/about-person-2.jpg" class="card-img-top" alt="..."
             style="height: 250px; object-fit: cover;">
             <div class="position-absolute bottom-0 start-50 translate-middle-x">
              <div class="bg-primary d-flex p-2">
@@ -64,7 +64,7 @@
       <div class="col" data-aos="flip-left">
         <div class="card h-100">
           <div class="card-header p-0 position-relative">
-            <img src="public/img/about-person-3.jpg" class="card-img-top" alt="..."
+            <img src="../../assets/img/about-person-3.jpg" class="card-img-top" alt="..."
             style="height: 250px; object-fit: cover;">
             <div class="position-absolute bottom-0 start-50 translate-middle-x">
              <div class="bg-primary d-flex p-2">
@@ -86,7 +86,7 @@
       <div class="col" data-aos="flip-left">
         <div class="card h-100">
           <div class="card-header p-0 position-relative">
-            <img src="public/img/about-person-4.jpg" class="card-img-top" alt="..."
+            <img src="../../assets/img/about-person-4.jpg" class="card-img-top" alt="..."
             style="height: 250px; object-fit: cover;">
             <div class="position-absolute bottom-0 start-50 translate-middle-x">
              <div class="bg-primary d-flex p-2">
@@ -113,7 +113,7 @@
     </div>
     <div class="row">
       <div class="col-12 col-md-6" data-aos="zoom-in-right">
-        <img src="public/img/about-life-1.webp" alt="">
+        <img src="../../assets/img/about-life-1.webp" alt="">
       </div>
       <div class="col-12 col-md-6 d-flex justify-content-center align-items-center"
       data-aos="zoom-in-right" style="min-height: 200px;">

@@ -4,7 +4,7 @@
       <div class="rounded-3 position-fixed top-0 bottom-0 my-3"
        style="background: #0C1228;max-width: 13.75rem;">
         <div class="d-flex justify-content-center align-items-center py-4">
-          <img src="public/dashboard.svg" alt="Dashboard">
+          <img src="../../src/assets/dashboard.svg" alt="Dashboard">
           <h2 class="fs-3 lh-base m-0 ms-2 text-light">Dashboard</h2>
         </div>
         <hr class="m-0 border border-light opacity-100">

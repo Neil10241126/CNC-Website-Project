@@ -1,17 +1,16 @@
 <template>
   <section class="banner position-relative"
    style="margin-top: 95px;">
-    <img src="public/img/course-banner.jpg" alt="">
     <div class="position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center
      align-items-center"
       style="background: rgba(24, 29, 56, .4);">
       <h2 class="banner-title fs-1 text-light">課程列表</h2>
     </div>
   </section>
-  <button @click="showAlert">Hello world</button>
+  <!-- <button @click="showAlert">Hello world</button> -->
 </template>
 
-<script>
+<!-- <script>
 export default {
   data() {
     return {
@@ -37,4 +36,4 @@ export default {
     });
   },
 };
-</script>
+</script> -->

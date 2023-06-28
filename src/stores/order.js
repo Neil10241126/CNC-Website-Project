@@ -16,18 +16,18 @@ const orderStore = defineStore('order', {
         .then((res) => {
           this.order = res.data.order;
           this.user = res.data.order.user;
-          console.log(res.data);
+          // console.log(res.data);
           // console.log('訂單資訊: ', this.user);
-        }).catch((err) => {
-          console.log(err);
+        }).catch(() => {
+          // console.log(err);
         });
     },
     payOrder() {
       axios.post(`${VITE_URL}/v2/api/${VITE_PATH}/pay/${this.orderId}`)
-        .then((res) => {
-          console.log(res);
-        }).catch((err) => {
-          console.log(err);
+        .then(() => {
+          // console.log(res);
+        }).catch(() => {
+          // console.log(err);
         });
     },
   },
