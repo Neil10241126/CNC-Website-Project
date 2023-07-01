@@ -11,13 +11,16 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="../../assets/img/index-banner-1.jpg" class="d-block w-100" alt="...">
+          <img src="../../assets/img/index-banner-1.jpg" class="d-block w-100" alt="..."
+          style="max-height: 700px; object-fit: cover;">
         </div>
         <div class="carousel-item">
-          <img src="../../assets/img/index-banner-2.jpg" class="d-block w-100" alt="...">
+          <img src="../../assets/img/index-banner-2.jpg" class="d-block w-100" alt="..."
+          style="max-height: 700px; object-fit: cover;">
         </div>
         <div class="carousel-item">
-          <img src="../../assets/img/index-banner-3.jpg" class="d-block w-100" alt="...">
+          <img src="../../assets/img/index-banner-3.jpg" class="d-block w-100" alt="..."
+          style="max-height: 700px; object-fit: cover;">
         </div>
       </div>
     </div>

@@ -9,6 +9,10 @@ import './assets/all.scss';
 
 const pinia = createPinia();
 const app = createApp(App);
+// router.afterEach(() => window.scrollTo({
+//   top: 0,
+//   behavior: 'smooth',
+// })); // 換頁捲動至最上方
 
 app.use(pinia);
 // app.use(VueSweetalert2);

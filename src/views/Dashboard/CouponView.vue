@@ -1,7 +1,8 @@
 <template>
   <div class="d-flex justify-content-between align-items-center py-4">
     <h2 class="fs-1 lh-base m-0">優惠券列表</h2>
-    <button type="button" class="btn btn-outline-primary">新增優惠券</button>
+    <button type="button" class="btn btn-outline-primary"
+    @click="openModal('add')">新增優惠券</button>
   </div>
   <table class="table table-hover border align-middle">
     <thead>
@@ -25,8 +26,10 @@
         </td>
         <td>
           <div class="btn-group" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-info">編輯</button>
-            <button type="button" class="btn btn-danger">刪除</button>
+            <button type="button" class="btn btn-dark"
+            @click="openModal('put', coupon)">編輯</button>
+            <button type="button" class="btn btn-danger"
+            @click="deleteCoupon(coupon.id)">刪除</button>
           </div>
         </td>
       </tr>
@@ -53,17 +56,37 @@
       </li>
     </ul>
   </nav> -->
+
+  <!-- CouponModal -->
+  <CouponModal ref="modal"
+  :get-coupon="getCoupon"
+  :is-new="isNew"></CouponModal>
 </template>
 
 <script>
+import CouponModal from '../../components/CouponModal.vue';
+
 const { VITE_URL, VITE_PATH } = import.meta.env;
 export default {
   data() {
     return {
       coupons: [],
+      isNew: false,
     };
   },
+  components: {
+    CouponModal,
+  },
   methods: {
+    checkAdmin() {
+      this.$http.post(`${VITE_URL}/v2/api/user/check`)
+        .then(() => {
+          this.getCoupon();
+        }).catch(() => {
+          // alert(err.response.data.message);
+          this.$router.push('/login');
+        });
+    },
     getCoupon() { // 取得優惠券
       this.$http.get(`${VITE_URL}/v2/api/${VITE_PATH}/admin/coupons`)
         .then((res) => {
@@ -73,14 +96,37 @@ export default {
           // console.log(err);
         });
     },
-
+    deleteCoupon(id) {
+      this.$http.delete(`${VITE_URL}/v2/api/${VITE_PATH}/admin/coupon/${id}`)
+        .then(() => {
+          // console.log(res);
+          this.getCoupon();
+        }).catch(() => {
+          // console.log(err);
+        });
+    },
+    openModal(status, coupon) {
+      if (status === 'add') {
+        this.isNew = true;
+        this.$refs.modal.data = {};
+        this.$refs.modal.couponModal.show();
+      } else if (status === 'put') {
+        this.isNew = false;
+        this.$refs.modal.data = { ...coupon };
+        this.$refs.modal.couponModal.show();
+      }
+    },
     deadLine(value) { // 轉換時間戳記
       const time = new Date(value);
       return `${time.getFullYear()}/${time.getMonth() + 1}/${time.getDate()}`;
     },
   },
   mounted() {
-    this.getCoupon();
+    // 取出 token
+    const token = document.cookie.replace(/(?:(?:^|.*;\s*)CookieToken\s*=\s*([^;]*).*$)|^.*$/, '$1');
+    this.$http.defaults.headers.common.Authorization = token;
+    // 驗證 token 是否為本人
+    this.checkAdmin();
   },
 };
 </script>

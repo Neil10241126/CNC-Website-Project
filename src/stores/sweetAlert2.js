@@ -7,8 +7,12 @@ const alertStore = defineStore('alert', {
       toast: true, // 開啟 toast
       position: 'top-end', // 顯示位置
       showConfirmButton: false,
-      timer: 3000, // 持續時間
+      timer: 2000, // 持續時間
       timerProgressBar: true,
+    }),
+    errorAlert: Swal.mixin({
+      icon: 'error',
+      confirmButtonText: '馬上填寫',
     }),
   }),
 });

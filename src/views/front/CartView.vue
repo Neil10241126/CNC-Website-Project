@@ -51,13 +51,14 @@
           </li>
           <li class="d-flex justify-content-between align-items-center">
             <p>折扣</p>
-            <p>NT$ -800</p>
+            <p>NT$ -{{ cartData.total - cartData.final_total }}</p>
           </li>
           <div class="input-group mb-3 mt-5">
             <input type="text" class="form-control" placeholder="輸入優惠代碼"
-             aria-label="Recipient's username" aria-describedby="button-addon2">
+             aria-label="Recipient's username" aria-describedby="button-addon2"
+             v-model="data.code">
             <button class="btn btn-outline-success" type="button" id="button-addon2"
-              >Button</button>
+              @click="getCoupon()">Button</button>
           </div>
         </ul>
         <div>
@@ -77,6 +78,7 @@
 import { RouterLink } from 'vue-router';
 import { mapActions, mapState } from 'pinia';
 import cartStore from '../../stores/cart';
+import couponStore from '../../stores/coupon';
 
 export default {
   components: {
@@ -87,6 +89,7 @@ export default {
   },
   computed: {
     ...mapState(cartStore, ['cartData']),
+    ...mapState(couponStore, ['data', 'getCoupon', 'final_total']),
   },
 };
 </script>

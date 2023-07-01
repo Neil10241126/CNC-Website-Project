@@ -4,7 +4,8 @@
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header bg-dark">
-          <h4 class="modal-title text-light" id="exampleModalLabel">新增商品</h4>
+          <h4 class="modal-title text-light" id="exampleModalLabel"
+          >{{ isNew ? '新增商品': '修改商品'}}</h4>
           <button type="button" class="btn-close btn-close-white"
           data-bs-dismiss="modal" aria-label="Close"></button>
         </div>

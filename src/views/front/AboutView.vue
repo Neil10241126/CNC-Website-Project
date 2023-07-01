@@ -1,7 +1,8 @@
 <template>
   <section class="banner position-relative"
    style="margin-top: 95px;">
-    <img src="../../assets/img/about-banner.webp" alt="">
+    <img src="../../assets/img/about-banner.webp" alt="" class="container-fluid"
+     style="max-height: 700px; object-fit: cover;">
     <div class="position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center
      align-items-center"
       style="background: rgba(24, 29, 56, .4);">
@@ -125,6 +126,11 @@
 
 <style lang="scss" scoped>
 @import '../../../node_modules/bootstrap-icons/font/bootstrap-icons.css';
+.banner-title {
+  @include pad {
+    font-size: 64px !important;
+  }
+}
 .section-title {
   @include pad {
     font-size: 40px !important;

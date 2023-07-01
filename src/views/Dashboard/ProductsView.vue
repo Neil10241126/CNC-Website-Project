@@ -28,7 +28,7 @@
         </td>
         <td>
           <div class="btn-group" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-info"
+            <button type="button" class="btn btn-dark"
               @click="openModal('put', product)">編輯</button>
             <button type="button" class="btn btn-danger"
               @click="openModal('del', product)">刪除</button>

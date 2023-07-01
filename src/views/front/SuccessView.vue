@@ -1,6 +1,6 @@
 <template>
-  <section class="banner position-relative"
-   style="margin-top: 95px;">
+  <section class="banner position-relative" style="margin-top: 95px;"
+  data-aos="zoom-in">
     <img src="../../assets/img/course-banner.jpg" alt="">
     <div class="position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center
      align-items-center"

@@ -60,7 +60,7 @@
           </li>
           <li class="d-flex justify-content-between align-items-center">
             <p>折扣</p>
-            <p>NT$ 0</p>
+            <p>NT$ -{{ cartData.total - cartData.final_total }}</p>
           </li>
         </ul>
         <div>
@@ -86,6 +86,7 @@ import { localize, loadLocaleFromURL } from '@vee-validate/i18n';
 import { mapActions, mapState } from 'pinia';
 import cartStore from '../../stores/cart';
 import orderStore from '../../stores/order';
+import alertStore from '../../stores/sweetAlert2';
 // 定義 useOrderStore 方法來使用 orderStore元件
 const useOrderStore = orderStore();
 
@@ -129,14 +130,20 @@ export default {
           });
           this.getCart();
           this.$router.push('/pay');
-        }).catch(() => {
-          // console.log(err);
+        }).catch((err) => {
+          // 資料填寫錯誤時提示
+          if (err.response.status === 400) {
+            this.errorAlert.fire({
+              title: '資料尚未填寫完整',
+            });
+          }
         });
     },
     ...mapActions(cartStore, ['getCart']),
   },
   computed: {
     ...mapState(cartStore, ['cartData']),
+    ...mapState(alertStore, ['errorAlert']),
   },
 };
 </script>

@@ -1,7 +1,8 @@
 <template>
   <section class="banner position-relative"
    style="margin-top: 95px;">
-    <img src="../../assets/img/course-banner.jpg" alt="">
+    <img src="../../assets/img/course-banner.jpg" alt="" class="container-fluid"
+     style="max-height: 700px; object-fit: cover;">
     <div class="position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center
      align-items-center"
       style="background: rgba(24, 29, 56, .4);">
@@ -49,7 +50,9 @@ export default {
 
 <style lang="scss" scoped>
 .banner-title {
-  font-size: 64px !important;
+  @include pad {
+    font-size: 64px !important;
+  }
 }
 .course-nav a {
   &:hover, &:focus {
