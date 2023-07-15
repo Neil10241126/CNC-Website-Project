@@ -28,7 +28,8 @@
                 <div class="btn-group d-block" style="width: 85%;">
                   <button type="button" class="btn btn-primary w-50"
                   @click="addCart(product.id)">加入購物車</button>
-                  <button type="button" class="btn btn-danger w-50">立刻上課</button>
+                  <button type="button" class="btn btn-danger w-50"
+                  @click="[addCart(product.id),$router.push('/cart')]">立刻上課</button>
                 </div>
                 <button type="button" class="btn btn-outline-secondary">
                   <i class="bi bi-heart"></i></button>

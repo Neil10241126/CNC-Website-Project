@@ -223,7 +223,7 @@ export default {
     // gsap 方法
     gsap.registerPlugin(TextPlugin);
     gsap.timeline({ defaults: { opacity: 0, ease: 'back' } })
-      .from('#demo', { scale: 0.6, duration: 1 })
+      .from('#demo', { scale: 0.5, duration: 1 })
       .from('.banner-text', { x: -80, duration: 1.5 })
       .from('.banner-title', { x: 150, duration: 1.5 }, '<')
       .to('.strong-text', {

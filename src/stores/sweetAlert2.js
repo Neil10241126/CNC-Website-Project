@@ -14,6 +14,10 @@ const alertStore = defineStore('alert', {
       icon: 'error',
       confirmButtonText: '馬上填寫',
     }),
+    couponAlert: Swal.mixin({
+      icon: 'success',
+      confirmButtonText: '已領取',
+    }),
   }),
 });
 

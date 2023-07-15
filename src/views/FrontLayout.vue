@@ -81,9 +81,10 @@
         <div class="col-12 col-md-7">
           <h3 class="text-light text-end">訂閱我們</h3>
           <div class="input-group my-3">
-            <input type="email" class="form-control border-0 rounded-0" placeholder="請輸入Email">
-            <button type="button" class="btn btn-secondary text-light border-0 rounded-0">
-              訂閱</button>
+            <input type="email" class="form-control border-0 rounded-0" v-model="userEmail"
+             placeholder="請輸入 Email 來獲取優惠代碼">
+            <button type="button" class="btn btn-secondary text-light border-0 rounded-0"
+            @click="getCoupon()">訂閱</button>
           </div>
           <p class="text-light text-end"><small>© Copyright 2023 本網站僅個人練習作品，非商業用途</small></p>
         </div>
@@ -96,18 +97,38 @@
 import 'bootstrap/js/dist/collapse';
 import Offcanvas from 'bootstrap/js/dist/offcanvas';
 import { RouterLink, RouterView } from 'vue-router';
+import { mapState } from 'pinia';
 import cartItem from '../components/front/CartItem.vue';
+import alertStore from '../stores/sweetAlert2';
 
 export default {
   data() {
     return {
       cartOffCanvas: {},
+      userEmail: '',
     };
   },
   components: {
     RouterLink,
     RouterView,
     cartItem,
+  },
+  methods: {
+    getCoupon() {
+      if (this.userEmail === '') {
+        this.errorAlert.fire({
+          title: 'Email 尚未填寫',
+        });
+      } else {
+        this.couponAlert.fire({
+          title: '<strong>優惠碼 <u>testCode</u></strong>',
+          color: '#eb40ad',
+        });
+      }
+    },
+  },
+  computed: {
+    ...mapState(alertStore, ['couponAlert', 'errorAlert']),
   },
   mounted() {
     this.cartOffCanvas = new Offcanvas(this.$refs.cart);
