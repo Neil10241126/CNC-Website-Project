@@ -30,10 +30,6 @@ const routes = [
         ],
       },
       {
-        path: 'skills',
-        component: () => import('../views/front/SkillsView.vue'),
-      },
-      {
         path: 'about',
         component: () => import('../views/front/AboutView.vue'),
       },

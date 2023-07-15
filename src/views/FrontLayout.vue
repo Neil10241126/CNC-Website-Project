@@ -21,10 +21,6 @@
               border-primary border-3 fs-5" aria-current="page">課程</RouterLink>
             </li>
             <li class="nav-item text-center ms-md-3">
-              <RouterLink to="/skills" class="nav-link text-light border
-              border-primary border-3 fs-5">技術專欄</RouterLink>
-            </li>
-            <li class="nav-item text-center ms-md-3">
               <RouterLink to="/about" class="nav-link text-light border
               border-primary border-3 fs-5">關於我們</RouterLink>
             </li>
@@ -132,7 +128,7 @@ export default {
 .navbar {
   .nav-link {
     &:hover, &:focus {
-      border: 3.4px solid var(--secondary) !important;
+      border: 2.4px solid var(--secondary) !important;
     }
   }
   .btn-login {

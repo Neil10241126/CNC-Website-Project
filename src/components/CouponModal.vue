@@ -115,7 +115,7 @@ export default {
   mounted() {
     this.couponModal = new Modal(this.$refs.coupon);
     // console.log(this.$refs.timeValue.valueAsNumber);
-    console.log(new Date(2300000000332));
+    // console.log(new Date(2300000000332));
 
     // const date = document.querySelector('#dueDate');
     // date.addEventListener('change', (e) => {

@@ -1,5 +1,5 @@
 <template>
-  <section class="container-fluid position-relative p-0" style="margin-top: 95px;">
+  <section id="demo" class="container-fluid position-relative p-0" style="margin-top: 95px;">
     <div id="carouselBanner" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselBanner" data-bs-slide-to="0" class="active"
@@ -30,11 +30,12 @@
      <div class="container">
       <div class="row text-light">
         <div class="col-10">
-          <p class="mb-0">最好的在線平台</p>
+          <p class="banner-text mb-0">最好的在線平台</p>
           <h2 class="banner-title fs-1">從CNC初學者到專家</h2>
-          <strong class=" fs-4">打造您的一站式學習資源</strong>
-          <button type="button" class="btn btn-secondary d-block
-           px-md-4 mt-4" @click="$router.push('/course/category/all')">我要上課</button>
+          <strong class="strong-text fs-4">  </strong>
+          <span class="span"></span>
+          <button type="button" class="btn-course d-block
+            mt-4" @click="$router.push('/course/category/all')">我要上課</button>
         </div>
         <div class="col-2 d-flex justify-content-end align-items-end">
           <div class="btn-group-vertical">
@@ -213,6 +214,34 @@
 
 <script>
 import 'bootstrap/js/dist/carousel';
+// 匯入 gsap方法
+import { gsap } from 'gsap';
+import { TextPlugin } from 'gsap/TextPlugin';
+
+export default {
+  mounted() {
+    // gsap 方法
+    gsap.registerPlugin(TextPlugin);
+    gsap.timeline({ defaults: { opacity: 0, ease: 'back' } })
+      .from('#demo', { scale: 0.6, duration: 1 })
+      .from('.banner-text', { x: -80, duration: 1.5 })
+      .from('.banner-title', { x: 150, duration: 1.5 }, '<')
+      .to('.strong-text', {
+        text: '打造您的一站式學習資源 ',
+        duration: 2,
+        opacity: 1,
+        ease: 'power1.in',
+      }, '-=0.9')
+      .to('.span', {
+        text: '＿',
+        duration: 0.7,
+        opacity: 1,
+        repeat: -1,
+        fontSize: '20px',
+      })
+      .from('.btn-course', { y: 40, duration: 1 }, '-=0.5');
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -221,6 +250,36 @@ import 'bootstrap/js/dist/carousel';
   min-height: 350px;
   object-fit: cover;
 }
+.btn-course {
+  padding: 10px 35px;
+  border-radius: 50px;
+  border: 3px solid var(--secondary);
+  background: transparent;
+  color: var(--secondary);
+  position: relative;
+  overflow: hidden;
+  font-size: 20px;
+  &::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    background-color: var(--secondary);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+  }
+  &:hover {
+    color: #fff;
+  }
+  &:hover::after {
+    left: 0;
+    width: 100%;
+  }
+}
+
 .section-title {
   position: relative;
   &::before {
