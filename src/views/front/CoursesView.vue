@@ -34,10 +34,18 @@ export default {
     return {
       category: [
         { cateId: 'all', name: '全部課程', cate: '' },
-        { cateId: 'lathe', name: 'CNC 車床', cate: '車床' },
-        { cateId: 'milling', name: 'CNC 銑床', cate: '銑床' },
-        { cateId: 'general', name: '專業通識', cate: '通識' },
-        { cateId: 'certify', name: '證照檢定', cate: '證照' },
+        {
+          cateId: 'lathe', name: 'CNC 車床', cate: '車床', teacher: 'Benson',
+        },
+        {
+          cateId: 'milling', name: 'CNC 銑床', cate: '銑床', teacher: 'Mike',
+        },
+        {
+          cateId: 'general', name: '專業通識', cate: '通識', teacher: 'James',
+        },
+        {
+          cateId: 'certify', name: '證照檢定', cate: '證照', teacher: 'Frank',
+        },
       ],
     };
   },

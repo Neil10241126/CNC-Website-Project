@@ -15,7 +15,8 @@
             <div class="d-flex justify-content-between align-items-center">
               <p class="card-text mb-0 text-light fs-5">$ {{ cart.final_total }}</p>
               <a href="#" class="text-light"
-                @click.prevent="deleteCartId(cart.id)"><i class="bi bi-trash fs-5"></i></a>
+                @click.prevent="deleteCartId(cart.id, cart.product.id)">
+                <i class="bi bi-trash fs-5"></i></a>
             </div>
           </div>
         </div>

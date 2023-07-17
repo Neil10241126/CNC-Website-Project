@@ -121,7 +121,7 @@ export default {
         });
       } else {
         this.couponAlert.fire({
-          title: '<strong>優惠碼 <u>testCode</u></strong>',
+          title: '<strong>優惠碼 <u>CNC80</u></strong>',
           color: '#eb40ad',
         });
       }
@@ -154,7 +154,7 @@ export default {
   }
   .btn-login {
     border-radius: 0;
-    @include desktop {
+    @media (min-width: 768px) {
       border-radius: 50rem;
     }
   }

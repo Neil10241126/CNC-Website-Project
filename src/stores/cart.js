@@ -43,7 +43,14 @@ const cartStore = defineStore('cart', {
           });
       }
     },
-    deleteCartId(id) {
+    deleteCartId(id, productId) {
+      // 將 cartsID 內的產品資料同時刪除
+      this.cartsID.forEach((item, index) => {
+        if (productId === item) {
+          this.cartsID.splice(index, 1);
+        }
+      });
+
       axios.delete(`${VITE_URL}/v2/api/${VITE_PATH}/cart/${id}`)
         .then((res) => {
           this.toastAlert.fire({

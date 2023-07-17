@@ -18,7 +18,7 @@
               <img :src="product.imageUrl" class="card-img-top" alt="..."
                 style="object-fit: cover; height: 200px;">
                 <button type="button" class="add_button btn btn-danger rounded-0 fs-5 w-100"
-              ><i class="bi bi-bag me-3"></i>加入購物車</button>
+              ><i class="bi bi-bag me-3"></i>查看細節</button>
             </div>
             <div class="card-body text-center">
               <p class="card-text fs-2">$ {{ product.price }}</p>
@@ -28,8 +28,9 @@
               <span class="badge rounded-pill bg-success fs-6">{{ product.category }}</span>
             </div>
             <div class="row g-0 text-center border-top border-primary border-2">
-              <p class="col border-end border-primary border-2 m-0 py-2">Mike</p>
-              <p class="col m-0 py-2">11.0 Hrs</p>
+              <p class="col border-end border-primary border-2 m-0 py-2">
+                {{ getTeacher(product.category) }}</p>
+              <p class="col m-0 py-2">{{ product.content }} 小時</p>
             </div>
           </div>
         </RouterLink>
@@ -81,9 +82,23 @@ export default {
         .then((res) => {
           this.products = res.data.products;
           // console.log('客戶產品列表: ', this.products);
+          const array = [];
+          this.products.forEach((item) => {
+            array.push(item.content);
+            // console.log(item.content);
+          });
         }).catch(() => {
           // console.log(err);
         });
+    },
+    getTeacher(category) {
+      let teacher = '';
+      this.category.forEach((item) => {
+        if (item.cate === category) {
+          teacher = item.teacher;
+        }
+      });
+      return teacher;
     },
     sortArray() {
       if (this.selectValue === 'priceUp') {
@@ -103,6 +118,7 @@ export default {
 @import '../../../node_modules/bootstrap-icons/font/bootstrap-icons.css';
 
 .card_link {
+  position: relative;
   .card_img {
     position: relative;
     overflow: hidden;
@@ -111,6 +127,7 @@ export default {
       left: 0;
       bottom: -50px;
       transition: all 0.5s;
+      // z-index: 10;
     }
   }
   &:hover {
