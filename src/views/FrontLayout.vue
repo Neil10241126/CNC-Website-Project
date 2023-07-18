@@ -90,6 +90,11 @@
         </div>
       </div>
     </footer>
+
+    <!-- up button -->
+    <div class="upward-btn" @click="upScrollTop()">
+      <svg class="upward-svg" xmlns="http://www.w3.org/2000/svg" height="48" fill="#fff" viewBox="0 -960 960 960" width="48"><path d="M450-160v-526L202-438l-42-42 320-320 320 320-42 42-248-248v526h-60Z"/></svg>
+    </div>
   </div>
 </template>
 
@@ -125,6 +130,12 @@ export default {
           color: '#eb40ad',
         });
       }
+    },
+    upScrollTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
     },
   },
   computed: {
@@ -164,6 +175,22 @@ export default {
     transition: all 0.2s;
     &:hover {
       color: var(--secondary) !important;
+    }
+  }
+}
+
+.upward-btn {
+  position: fixed;
+  right: 3rem;
+  bottom: 3rem;
+  cursor: pointer;
+  .upward-svg {
+    background: var(--secondary);
+    border-radius: 50%;
+    padding: 5px;
+    transition: all 0.3s;
+    &:hover {
+      scale: 1.2;
     }
   }
 }

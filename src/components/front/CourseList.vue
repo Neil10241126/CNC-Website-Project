@@ -21,7 +21,14 @@
               ><i class="bi bi-bag me-3"></i>查看細節</button>
             </div>
             <div class="card-body text-center">
-              <p class="card-text fs-2">$ {{ product.price }}</p>
+              <div v-if="product.origin_price === product.price">
+                <p class="card-text fs-2">$ {{ product.origin_price }}</p>
+              </div>
+              <div v-else class="d-flex justify-content-center align-items-center">
+                <p class="card-text fs-2 mb-0 me-3"><del>$ {{ product.origin_price }}</del></p>
+                <p class="card-text fs-3 text-danger">$ {{ product.price }}
+                  </p>
+              </div>
               <h5 class="card-title">{{ product.title }}</h5>
             </div>
             <div class="m-2">
@@ -51,6 +58,7 @@ export default {
       pageId: this.$route.params.cateId,
       pageName: '全部課程',
       selectValue: '排序', // 排序參數值
+      loader: {},
     };
   },
   components: {
@@ -72,6 +80,12 @@ export default {
   },
   methods: {
     getProducts(parmas) {
+      // AJAX 完成前運行讀取效果
+      this.loader = this.$loading.show({
+        active: true,
+        canCancel: true,
+        onCancel: this.onCancel,
+      });
       let url = `${VITE_URL}/v2/api/${VITE_PATH}/products`;
       if (typeof parmas === 'string') {
         url = `${VITE_URL}/v2/api/${VITE_PATH}/products/?category=${parmas}`;
@@ -87,6 +101,7 @@ export default {
             array.push(item.content);
             // console.log(item.content);
           });
+          this.loader.hide();
         }).catch(() => {
           // console.log(err);
         });

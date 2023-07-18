@@ -8,6 +8,7 @@ const cartStore = defineStore('cart', {
   state: () => ({
     cartData: {}, // 用戶購物車資料
     cartsID: [], // ID比對是否重複下單
+    loader: {},
   }),
   actions: {
     getCart() {

@@ -39,14 +39,14 @@
         </div>
         <div class="col-2 d-flex justify-content-end align-items-end">
           <div class="btn-group-vertical">
-            <button class="btn btn-outline-secondary border border-3 border-secondary rounded"
-            data-bs-target="#carouselBanner" data-bs-slide="prev">
+            <button class="btn-arrow btn btn-outline-secondary border border-3 border-secondary
+             rounded" data-bs-target="#carouselBanner" data-bs-slide="prev">
               <span class="material-symbols-outlined align-middle">
                 arrow_back
               </span>
             </button>
-            <button class="btn btn-outline-secondary border border-3 border-secondary rounded mt-4"
-            data-bs-target="#carouselBanner" data-bs-slide="next">
+            <button class="btn-arrow btn btn-outline-secondary border border-3 border-secondary
+             rounded mt-4" data-bs-target="#carouselBanner" data-bs-slide="next">
               <span class="material-symbols-outlined align-middle">
                 arrow_forward
               </span>
@@ -277,6 +277,13 @@ export default {
   &:hover::after {
     left: 0;
     width: 100%;
+  }
+}
+.btn-arrow {
+  &:hover {
+    .material-symbols-outlined {
+      color: white;
+    }
   }
 }
 

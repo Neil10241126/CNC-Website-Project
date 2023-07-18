@@ -23,7 +23,11 @@
             <p class="card-text mt-4">{{ product.description }}</p>
           </div>
           <div class="card-footer px-4 pt-0 pb-3">
-              <span class="fs-1">NT$ {{ product.price }}</span>
+              <span class="fs-1 me-3" :class="{'del-line': product.origin_price !== product.price}"
+                >NT$ {{ product.origin_price }}</span>
+              <span class="fs-1 text-danger"
+               :class="{'d-none': product.origin_price === product.price}"
+                >NT$ {{ product.price }}</span>
               <div class="d-flex justify-content-between mt-2">
                 <div class="btn-group d-block" style="width: 85%;">
                   <button type="button" class="btn btn-primary w-50"
@@ -76,5 +80,9 @@ export default {
   @include pad {
     font-size: 64px !important;
   }
+}
+
+.del-line {
+  text-decoration:line-through;
 }
 </style>
