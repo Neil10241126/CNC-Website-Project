@@ -1,0 +1,1 @@
+import{_ as t,o as n,b as s,F as c,e}from"./index-3e734e5b.js";const o={},r=e("h2",null,"文章管理",-1),a=e("div",null,null,-1);function l(_,i){return n(),s(c,null,[r,a],64)}const u=t(o,[["render",l]]);export{u as default};
