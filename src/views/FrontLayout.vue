@@ -181,9 +181,13 @@ export default {
 
 .upward-btn {
   position: fixed;
-  right: 3rem;
-  bottom: 3rem;
+  right: 1rem;
+  bottom: 1rem;
   cursor: pointer;
+  @include pad {
+    right: 2rem;
+    bottom: 2rem;
+  }
   .upward-svg {
     background: var(--secondary);
     border-radius: 50%;
