@@ -43,6 +43,12 @@
 ```
 git clone https://github.com/Neil10241126/CNC-Website-Project.git
 ```
+
+### 移動至專案
+```
+cd CNC-Website-Project
+```
+
 ### 初始化套件
 ```
 npm install
