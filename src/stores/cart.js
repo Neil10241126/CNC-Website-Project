@@ -1,6 +1,7 @@
-import { defineStore, mapState } from 'pinia';
+import { defineStore, mapActions, mapState } from 'pinia';
 import axios from 'axios';
 import alertStore from './sweetAlert2';
+import vueLoadingStore from './vueLoading';
 
 const { VITE_URL, VITE_PATH } = import.meta.env;
 
@@ -8,14 +9,18 @@ const cartStore = defineStore('cart', {
   state: () => ({
     cartData: {}, // 用戶購物車資料
     cartsID: [], // ID比對是否重複下單
-    loader: {},
+    // loader: {},
   }),
   actions: {
+    ...mapActions(vueLoadingStore, ['showLoading', 'hideLoading']),
     getCart() {
+      this.showLoading();
       axios.get(`${VITE_URL}/v2/api/${VITE_PATH}/cart`)
         .then((res) => {
           this.cartData = res.data.data;
           // console.log('購物車: ', this.cartData);
+          // Loading.hide();
+          this.hideLoading();
         });
     },
     addCart(id) {

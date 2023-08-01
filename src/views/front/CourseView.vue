@@ -35,8 +35,6 @@
                   <button type="button" class="btn btn-danger w-50"
                   @click="[addCart(product.id),$router.push('/cart')]">立刻上課</button>
                 </div>
-                <button type="button" class="btn btn-outline-secondary">
-                  <i class="bi bi-heart"></i></button>
               </div>
             </div>
         </div>

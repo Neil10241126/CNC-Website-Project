@@ -80,12 +80,32 @@ import { mapActions, mapState } from 'pinia';
 import cartStore from '../../stores/cart';
 import couponStore from '../../stores/coupon';
 
+// const { VITE_URL, VITE_PATH } = import.meta.env;
+
 export default {
+  data() {
+    return {
+      // cartData: {},
+      // loader: {},
+    };
+  },
   components: {
     RouterLink,
   },
   methods: {
     ...mapActions(cartStore, ['deleteCartId']),
+    // getCart() {
+    //   this.loader = this.$loading.show({
+    //     active: true,
+    //     canCancel: true,
+    //     onCancel: this.onCancel,
+    //   });
+    //   this.$http.get(`${VITE_URL}/v2/api/${VITE_PATH}/cart`)
+    //     .then((res) => {
+    //       this.cartData = res.data.data;
+    //       this.loader.hide();
+    //     });
+    // },
   },
   computed: {
     ...mapState(cartStore, ['cartData']),
